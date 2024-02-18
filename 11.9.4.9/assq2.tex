@@ -91,48 +91,6 @@
     
 \begin{document}
 
-\[ y(n) = \sum_{k=1}^{n} x(k) \]
-
-
-\[ y(n) = \sum_{k=1}^{n} (5 - 2k) \]
-
-
-\[ Y(z) = \sum_{n=0}^{\infty} y(n)z^{-n} \]
-
-
-\[ Y(z) = \sum_{n=0}^{\infty} \left( \sum_{k=1}^{n} (5 - 2k) \right) z^{-n} \]
-
-
-\[ Y(z) = \sum_{k=1}^{\infty} \sum_{n=k}^{\infty} (5 - 2k)z^{-n} \]
-
-
-\[ Y(z) = \sum_{k=1}^{\infty} (5 - 2k) \sum_{n=k}^{\infty} z^{-n} \]
-
-\[ Y(z) = \sum_{k=1}^{\infty} (5 - 2k) \frac{z^{-k}}{1 - z^{-1}} \]
-
-\(x(n) = a^n\) has the Z-transform \(\frac{1}{1 - az^{-1}}\).
-
-We define the sequence \(x(n)\) as:
-\[ x(n) = 5 - 2n, \quad n = 1, 2, 3, \ldots \]
-
-Then, the sequence \(y(n)\) is given by:
-\[ y(n) = \sum_{k=1}^{n} x(k) = \sum_{k=1}^{n} (5 - 2k) \]
-
-The Z-transform of \(y(n)\) is given by:
-\[ Y(z) = \sum_{n=0}^{\infty} y(n)z^{-n} \]
-
-Substituting the expression for \(y(n)\), we have:
-\[ Y(z) = \sum_{n=0}^{\infty} \left( \sum_{k=1}^{n} (5 - 2k) \right) z^{-n} \]
-
-\[ Y(z) = \sum_{k=1}^{\infty} \sum_{n=k}^{\infty} (5 - 2k)z^{-n} \]
-
-\[ Y(z) = \sum_{k=1}^{\infty} (5 - 2k) \sum_{n=k}^{\infty} z^{-n} \]
-
-\[ Y(z) = \sum_{k=1}^{\infty} (5 - 2k) \frac{z^{-k}}{1 - z^{-1}} \]
-
-\(x(n) = a^n\) has the Z-transform \(\frac{1}{1 - az^{-1}}\). However, the expression we have is not a simple geometric series, so the process to find the Z-transform of \(y(n)\) might not yield a simple closed-form expression without further manipulation.
-
-
 \begin{table}[htbp]
     \centering
     \caption{Input Parameters}
@@ -148,6 +106,32 @@ Substituting the expression for \(y(n)\), we have:
     \hline
     \end{tabular}
 \end{table}
+
+We define the sequence \(x(n)\) as:
+\begin{equation}
+x(n) = 5 - 2n, \quad n = 1, 2, 3, \ldots
+\end{equation}
+
+Then, the sequence \(y(n)\) is given by:
+\begin{align*}
+y(n) &= \sum_{k=1}^{n} x(k) \\
+     &= \sum_{k=1}^{n} (5 - 2k)
+\end{align*}
+
+The Z-transform of \(y(n)\) is given by:
+\begin{equation}
+Y(z) = \sum_{n=0}^{\infty} y(n)z^{-n}
+\end{equation}
+
+Substituting the expression for \(y(n)\), we have:
+\begin{align*}
+Y(z) &= \sum_{n=0}^{\infty} \left( \sum_{k=1}^{n} (5 - 2k) \right) z^{-n} \\
+     &= \sum_{k=1}^{\infty} \sum_{n=k}^{\infty} (5 - 2k)z^{-n} \\
+     &= \sum_{k=1}^{\infty} (5 - 2k) \sum_{n=k}^{\infty} z^{-n} \\
+     &= \sum_{k=1}^{\infty} (5 - 2k) \frac{z^{-k}}{1 - z^{-1}}
+\end{align*}
+
+\(x(n) = a^n\) has the Z-transform \(\frac{1}{1 - az^{-1}}\). However, the expression we have is not a simple geometric series, so the process to find the Z-transform of \(y(n)\) might not yield a simple closed-form expression without further manipulation.
 
 \end{document}
 
