@@ -36,29 +36,25 @@
     \hline
     \textbf{Variable} & \textbf{Description} & \textbf{Value} \\
     \hline
-    \( x(n) \) & \( n \)-th term of sequence & \( (n^2 + 2^n)u(n) \) \\
+    \( x(n-1) \) & \( n \)-th term of sequence & \( (n^2 + 2^n)u(n) \) \\
     \hline
     \end{tabular}
 \end{table}
 \begin{align}
-x(n)&=(n^2+2^n)u(n)\\
+x(n-1)&=(n^2+2^n)u(n)\\
 2^n \cdot u(n) &\xleftrightarrow{\text{Z}} \frac{1}{1 - 2z^{-1}} \label{eq:11.9.4.9.1}\\
 \end{align}
-Refer equation\eqref{eq:11.9.5.26.2} from appendix and equation\eqref{eq:11.9.4.9.1}
+Refer equation\eqref{eq:11.9.5.26.2},equation\eqref{eq:shift} from appendix and equation\eqref{eq:11.9.4.9.1}
 \begin{align}
-X(z)&=\frac{z^{-1}(z^{-1} + 1)}{(1 - z^{-1})^3} +\frac{1}{1 - 2z^{-1}}\\
+z^{-1}X(z)&=\frac{z^{-1}(z^{-1} + 1)}{(1-z^{-1})^3} +\frac{1}{1 - 2z^{-1}}\\
+X(z)&=\frac{z^{-1} + 1}{(1 - z^{-1})^3}+\frac{1}{z^{-1}(1 - 2z^{-1})},\quad{|z|>2}\\
 Y(z)&=X(z)U(z)\\
-Y(z)&=\brak{\frac{z^{-1}(z^{-1} + 1)}{(1 - z^{-1})^3} +\frac{1}{1 - 2z^{-1}}}\brak{\frac{1}{1-z^{-1}}}\\
-Y(z)&=\frac{z^{-1}(1+z^{-1}){(1-z^{-1})^4}+\frac{2}{1-2z^{-1}}-\frac{1}{1-z^{-1}}\\
-\frac{z^{-1}(1+z^{-1})}{(1-z^{-1})^4}&\xleftrightarrow{Z^{-1}} \frac{n^2(n^2-1)}{3}u(n)\\
-\frac{1}{1-2z^{-1}}&\xleftrightarrow{Z^{-1}} 2^nu(n)\\
-y(n)&=\frac{n^2(n^2-1)}{3}u(n)+2.2^nu(n)-u(n)\\
-y(n)&=\brak{\frac{n^2(n^2-1)}{3}+2^{n+1}-1}u(n)
+Y(z)&=\brak{\frac{z^{-1} + 1}{(1 - z^{-1})^3}+\frac{1}{z^{-1}(1 - 2z^{-1})}}\brak{\frac{1}{1-z^{-1}}}
 \end{align}
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\columnwidth]{figs/main.png}
-    \caption{Graph of $y(n)$ for $0 \leq n \leq 15$ (Graph beyond $n = 29$ is not shown)}
+    \caption{Graph of $y(n)$ for $n \leq 15$ (Graph beyond $n = 29$ is not shown)}
     \label{fig:example}
 \end{figure}
 
