@@ -1,27 +1,21 @@
 import matplotlib.pyplot as plt
 
-# Read data from the .dat file
-data_file = 'sums.dat'
-with open(data_file, 'r') as file:
-    lines = file.readlines()
+# Read data from the DAT file
+data = []
+with open('output.dat', 'r') as file:
+    for line in file:
+        line = line.strip().split('\t')
+        data.append([int(line[0]), int(line[1])])
+n =  list(range(0, 10)) 
+x = [entry[0] for entry in data]
+y = [entry[1] for entry in data]
 
-# Parse the data into lists for plotting
-n_values = []
-sum_values = []
-for line in lines[1:]:  # Skip the header
-    n, summ = line.strip().split('\t')
-    n_values.append(int(n))
-    sum_values.append(int(summ))
-
-# Plotting
-plt.figure(figsize=(10, 6))
-plt.plot(n_values, sum_values, marker='o', color='b', linestyle='-')
-plt.title('Sum of the Series vs. n')
+plt.stem(n, y, use_line_collection=True,label='by using convultion')
+plt.scatter(n,x, color='r', marker='x', s=100, label='simulation')
 plt.xlabel('n')
-plt.ylabel('Sum')
+plt.ylabel('y(n)')
 plt.grid(True)
-plt.tight_layout()
 
-# Save the plot to an existing directory
 save_path = 'main.png'  # Update this path
 plt.savefig(save_path)
+plt.show()
